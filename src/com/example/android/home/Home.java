@@ -237,16 +237,7 @@ public class Home extends Activity {
      */
     private void setDefaultWallpaper() {
         if (!mWallpaperChecked) {
-            Drawable wallpaper = peekWallpaper();
-            if (wallpaper == null) {
-                try {
-                    clearWallpaper();
-                } catch (IOException e) {
-                    Log.e(LOG_TAG, "Failed to clear wallpaper " + e);
-                }
-            } else {
-                getWindow().setBackgroundDrawable(new ClippedDrawable(wallpaper));
-            }
+            getWindow().setBackgroundDrawable(getResources().getDrawable(R.drawable.workspace_bg));
             mWallpaperChecked = true;
         }
     }
